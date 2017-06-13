@@ -56,6 +56,25 @@ Custom markers
     
 
 Fixtures
+used in database connection establishment and closing. 
+[database object, database connection object and cursor object which helps in exeution of database query]
+uses dependency injections
+helps to setup connection once and end once rather than multiple times
+can be achieved using @pytest.fixture decorator
+
+@pytest.fixture()
+def cur():
+  db = MyDB()
+  conn = db.connect('server')
+  curssser = conn.cursor()
+  yield cursser
+  cursser.close
+  conn.close
+
+def test_john_empid(cur):  # cur is a fixture method ( dependency injection)
+  result = cur.execure(select id from emptable where name = 'john')
+  assert result == 123
+
 
 
 parameters - testing multiple inputs
@@ -74,3 +93,4 @@ def test_calc-square(testinput, testoutput):
     assert result = testoutput
 
 
+pytest --capture=no
