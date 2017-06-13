@@ -1,0 +1,17 @@
+Unit Test Framework - pytest
+
+pytest test discovery rules
+  a) test file name should be starting with test
+  b) method names should start with test
+
+Installation
+  pip install pytest
+
+Execution
+   python -m pytest  [recursively find and execute tests]
+   or
+   py.test
+   py.test -v    #[v => verbose]
+
+
+
