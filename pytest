@@ -41,3 +41,19 @@ def test_calc_multiply():
 	assert result == 20
 
 
+How to skip tests
+	a) add pytest module -> import pytest
+	b) add decorator @pytest.mark.skip(reason = 'skip reason')
+	                 @pytest.mark.skipif(sys.version_info > (2,7), reason = 'skip reason')
+	 python -v -rxs
+Selectively run tests using name
+	a) pytest -k multiply [runs all tests with substring multiply in method name]
+Custom markers
+	E.g:- categorize tests based on os i.e win, linux
+	a) add pytest module -> import pytest
+	b) add decorator @pytest.mark.win (win is a marker can be any arbitrary name for that group)
+	python -v -m win 
+    
+
+
+
