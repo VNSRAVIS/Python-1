@@ -3,6 +3,7 @@ Unit Test Framework - pytest
 pytest test discovery rules
   a) test file name should be starting with test
   b) method names should start with test
+  other rules include suffixes and file extensions
 
 Installation
   pip install pytest
@@ -13,5 +14,30 @@ Execution
    py.test
    py.test -v    #[v => verbose]
 
+
+
+
+mathlib.py
+
+def calc_total(a,b):
+	return a+b
+
+def calc_multiply(a,b):
+	return a*b
+
+
+
+test_mathlib.py
+
+import mathlib
+
+def test_calc_total():
+	total = mathlib.calc_total(4,5)
+	assert total == 9
+
+
+def test_calc_multiply():
+	result = mathlib.calc_multiply(4,5)
+	assert result == 20
 
 
